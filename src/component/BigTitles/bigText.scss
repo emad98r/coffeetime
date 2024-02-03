@@ -1,0 +1,28 @@
+@import "../../breakPoints.scss";
+h1 {
+  color: var(--main-color);
+  font-size: 5em;
+  font-weight: 800;
+  @include breakPoints(mobile) {
+    font-size: 3em;
+  }
+  .white-text {
+    color: var(--light-color);
+  }
+  .black-text {
+    color: var(--dark-color);
+  }
+}
+
+.black-color-text {
+  color: var(--dark-color);
+  @include breakPoints(mobile) {
+    font-size: 3em;
+  }
+  span {
+    color: var(--light-color);
+  }
+}
+.black-color-p {
+  color: var(--light-color);
+}

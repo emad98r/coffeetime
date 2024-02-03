@@ -1,0 +1,170 @@
+@import "../../assets/breakPoints.scss";
+
+footer {
+  width: 100%;
+  padding: 3em 0 0;
+  background-color: #000000c2;
+  display: flex;
+  flex-direction: column;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    @include breakPoints(mobile) {
+      row-gap: 2em;
+    }
+    @include breakPoints(small) {
+      grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+      margin-bottom: 2em;
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 8em;
+        margin-bottom: 3em;
+      }
+      p {
+        color: var(--light-color);
+        width: 80%;
+        margin-bottom: 3em;
+        font-weight: 300;
+      }
+      ul {
+        display: flex;
+        flex-direction: row;
+        li {
+          color: var(--main-color);
+          padding-right: 1em;
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .contact-info {
+      width: 100%;
+
+      color: var(--light-color);
+      h2 {
+        color: var(--main-color);
+        padding-bottom: 1em;
+        border-bottom: 3px solid var(--main-color);
+        font-weight: 800;
+        margin-bottom: 3em;
+        width: 50%;
+        @include breakPoints(mobile) {
+          margin-bottom: 1em;
+        }
+      }
+      .data {
+        section {
+          margin-bottom: 3em;
+          h4 {
+            color: var(--main-color);
+            text-transform: capitalize;
+            display: flex;
+            align-items: center;
+            font-size: 1.2em;
+            margin-bottom: 1em;
+            svg {
+              font-size: 1.2rem;
+              margin-right: 1em;
+            }
+          }
+          p {
+            font-weight: 300;
+            margin-left: 2.5em;
+            br {
+              margin: 0.5em 0;
+            }
+          }
+        }
+      }
+    }
+    .subscribe {
+      width: 100%;
+      h2 {
+        color: var(--main-color);
+        padding-bottom: 1em;
+        border-bottom: 3px solid var(--main-color);
+        font-weight: 800;
+        margin-bottom: 3em;
+        width: 50%;
+        @include breakPoints(mobile) {
+          margin-bottom: 1em;
+        }
+      }
+      form {
+        position: relative;
+        margin-bottom: 2em;
+        input {
+          height: 5em;
+          width: 100%;
+          outline: none;
+          border: none;
+          border-radius: 35px;
+          padding: 0 1em;
+          @include breakPoints(mobile) {
+            height: 3em;
+            margin-bottom: 1.5em;
+          }
+        }
+        button {
+          position: absolute;
+          width: 12em;
+          right: -1px;
+          @include breakPoints(mobile) {
+            position: static;
+            width: 100%;
+          }
+        }
+      }
+      label {
+        color: var(--light-color);
+        cursor: pointer;
+        font-size: 0.9em;
+        @include breakPoints(mobile) {
+          font-size: 0.8rem;
+        }
+        &:hover {
+          color: var(--main-color);
+        }
+        input {
+          margin-right: 1em;
+        }
+      }
+    }
+  }
+  .copy-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2em 0;
+    border-top: 1px solid var(--light-gray-color);
+    color: var(--light-color);
+    @include breakPoints(mobile) {
+      margin-top: 2em;
+    }
+    a {
+      color: var(--main-color);
+      text-decoration: none;
+      margin-left: 0.5em;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--light-color);
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        color: var(--light-color);
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

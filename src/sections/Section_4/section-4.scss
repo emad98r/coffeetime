@@ -1,0 +1,74 @@
+@import "../../assets/breakPoints.scss";
+
+.section-4 {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 33.3%);
+  background-color: var(--light-color);
+  @include breakPoints(mobile) {
+    grid-template-columns: 1fr;
+    height: 50vh;
+  }
+  @include breakPoints(small) {
+    grid-template-columns: 1fr;
+    height: 50vh;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 100vh;
+    @include breakPoints(mobile) {
+      display: none;
+    }
+    @include breakPoints(small) {
+      display: none;
+    }
+  }
+  .info {
+    background-color: #4d8b55;
+    .wrapper {
+      background-image: url("../../assets/images/section-3\ bg.png");
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      height: 100%;
+      padding: 0 1.5em;
+      @include breakPoints(mobile) {
+        align-items: center;
+        padding: 0;
+      }
+      @include breakPoints(small) {
+        align-items: center;
+      }
+    }
+    h1 {
+      margin-bottom: 0.5em;
+      @include breakPoints(mobile) {
+        font-size: 2em;
+        text-align: center;
+      }
+      @include breakPoints(small) {
+        text-align: center;
+      }
+    }
+    p {
+      width: 100%;
+      font-size: 1.2em;
+      line-height: 2;
+      font-weight: 500;
+      margin-bottom: 1em;
+      @include breakPoints(mobile) {
+        font-size: 1em;
+        font-weight: 300;
+        width: 80%;
+        text-align: center;
+      }
+      @include breakPoints(small) {
+        width: 80%;
+        text-align: center;
+      }
+    }
+  }
+}

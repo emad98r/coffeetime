@@ -1,0 +1,227 @@
+@import "../../assets/breakPoints.scss";
+
+header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  padding: 2em 0;
+  z-index: 10;
+
+  .container {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    align-items: center;
+    @include breakPoints(mobile) {
+      grid-template-columns: repeat(auto-fit, minmax(3em, 1fr));
+    }
+    @include breakPoints(small) {
+      grid-template-columns: repeat(auto-fit, minmax(3em, 1fr));
+    }
+    .follow-us {
+      display: flex;
+      @include breakPoints(mobile) {
+        display: none;
+      }
+      @include breakPoints(small) {
+        display: none;
+      }
+      p {
+        text-transform: capitalize;
+        margin-right: 3em;
+        position: relative;
+        color: var(--light-color);
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 6em;
+          width: 1.5em;
+          height: 2px;
+          background-color: var(--light-color);
+          transform: translate(-50%, -50%);
+        }
+        @include breakPoints(small) {
+          margin-right: 1.5em;
+          &::after {
+            display: none;
+          }
+        }
+      }
+      .s-m-icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        li {
+          padding: 0 1em;
+          font-size: 1em;
+          color: var(--light-color);
+          &:hover {
+            color: var(--main-color);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .logo {
+      width: 6em;
+      justify-self: center;
+      @include breakPoints(mobile) {
+        width: 5em;
+        justify-self: start;
+      }
+      @include breakPoints(small) {
+        width: 5em;
+        justify-self: start;
+      }
+    }
+    .user-action {
+      display: flex;
+      justify-content: flex-end;
+      @include breakPoints(mobile) {
+        display: none;
+      }
+
+      li {
+        padding: 0 1em;
+        font-size: 1em;
+        color: var(--light-color);
+
+        &:hover {
+          color: var(--main-color);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+    .container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      @include breakPoints(mobile) {
+        flex-direction: column;
+        background-color: var(--light-color);
+        display: none;
+      }
+      ul {
+        margin: 0 1em;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        font-weight: 700;
+        position: relative;
+        cursor: pointer;
+        color: var(--light-color);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        &:hover {
+          > span {
+            transform: rotate(90deg);
+          }
+        }
+        span {
+          transition: all 0.3s ease;
+          display: inline-block;
+          margin-left: 0.5em;
+          font-size: 0.7em;
+        }
+        @include breakPoints(mobile) {
+          margin: 0.5em 0;
+          width: 100%;
+          color: var(--dark-color);
+          padding: 1em 2em;
+        }
+        .wrapper {
+          width: max-content;
+          animation: moving 0.5s;
+          display: block;
+          visibility: hidden;
+          position: absolute;
+          top: 100%;
+          // margin-top: 2em;
+          background-color: var(--light-color);
+          @include breakPoints(mobile) {
+            width: 100%;
+            right: 0;
+            align-items: flex-end;
+            margin: 0;
+          }
+          li {
+            width: 100%;
+            padding: 1em 2em;
+            color: var(--dark-color);
+            &:hover {
+              background-color: var(--main-color);
+              color: var(--light-color);
+              .wrapper {
+                visibility: visible;
+              }
+            }
+            @include breakPoints(mobile) {
+              padding: 0.5em 0;
+            }
+          }
+        }
+        &:hover {
+          color: var(--main-color);
+          transition: all 0.2s ease-in;
+
+          .wrapper {
+            visibility: visible;
+            transition: all 0.3s ease 0.2s;
+            &:hover {
+              visibility: visible;
+            }
+            @include breakPoints(mobile) {
+              display: flex;
+              flex-direction: column;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.active {
+  color: var(--main-color) !important;
+}
+
+.burger-list {
+  display: none;
+  color: var(--light-color);
+  cursor: pointer;
+  background-color: transparent;
+  &:hover {
+    color: var(--main-color);
+  }
+  @include breakPoints(mobile) {
+    display: block;
+    justify-self: end;
+  }
+}
+.cancel-btn {
+  display: none;
+  color: var(--light-color);
+  cursor: pointer;
+  background-color: transparent;
+  &:hover {
+    color: red;
+  }
+  @include breakPoints(mobile) {
+    display: none;
+    justify-self: end;
+  }
+}

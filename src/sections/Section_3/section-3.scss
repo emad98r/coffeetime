@@ -1,0 +1,66 @@
+@import "../../breakPoints.scss";
+
+.section-3 {
+  width: 100%;
+  background-image: url("../../assets/images/section-3\ full\ bg.jpg");
+  background-repeat: repeat;
+  padding: 5em 0;
+  @include breakPoints(mobile) {
+    height: max-content;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .paragraph {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5em;
+      width: 100%;
+      background-image: url("../../assets/images/section-3\ bg.png");
+      background-repeat: no-repeat;
+      background-position: top;
+      height: 15em;
+      background-size: contain;
+      @include breakPoints(mobile) {
+        margin-bottom: 2em;
+      }
+      @include breakPoints(small) {
+        margin-bottom: 2em;
+      }
+      p {
+        width: 80%;
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: 800;
+        line-height: 2;
+        @include breakPoints(mobile) {
+          width: 95%;
+          font-size: 1em;
+        }
+        @include breakPoints(small) {
+          width: 95%;
+          font-size: 1.5em;
+        }
+        span {
+          color: var(--main-color);
+        }
+      }
+    }
+    .coffee-Beans {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      @include breakPoints(mobile) {
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      @include breakPoints(small) {
+        width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}

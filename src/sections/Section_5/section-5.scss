@@ -1,0 +1,47 @@
+@import "../../assets/breakPoints.scss";
+
+.section-5 {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--light-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include breakPoints(mobile) {
+    height: max-content;
+    padding: 3em 0;
+  }
+  @include breakPoints(small) {
+    height: max-content;
+    padding: 3em 0;
+  }
+  .container {
+    padding: 0 2em;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    @include breakPoints(mobile) {
+      display: flex;
+      flex-direction: column;
+    }
+    @include breakPoints(small) {
+      display: flex;
+      flex-direction: column;
+    }
+    img {
+      width: 40em;
+      @include breakPoints(mobile) {
+        display: none;
+      }
+      @include breakPoints(small) {
+        display: none;
+      }
+      @include breakPoints(medium) {
+        width: 30em;
+      }
+      @include breakPoints(large) {
+        width: 30em;
+      }
+    }
+  }
+}

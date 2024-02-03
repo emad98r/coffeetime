@@ -1,0 +1,151 @@
+@import "../../breakPoints.scss";
+.section-2 {
+  width: 100%;
+  background-color: var(--light-color);
+  height: 100vh;
+  @include breakPoints(mobile) {
+    padding: 3em 0;
+    height: max-content;
+  }
+  @include breakPoints(small) {
+    padding: 3em 0;
+    height: max-content;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    @include breakPoints(mobile) {
+      flex-direction: column;
+      justify-content: flex-start;
+      height: max-content;
+    }
+    @include breakPoints(small) {
+      flex-direction: column;
+      justify-content: flex-start;
+      height: max-content;
+    }
+    .info {
+      @include breakPoints(mobile) {
+        margin-bottom: 2em;
+      }
+      @include breakPoints(small) {
+        margin-bottom: 2em;
+      }
+      h1 {
+        font-size: 3em;
+        margin-bottom: 0.5em;
+        @include breakPoints(mobile) {
+          font-size: 1.5em;
+          text-align: center;
+        }
+      }
+      p {
+        line-height: 2;
+        width: 80%;
+        margin-bottom: 2em;
+        @include breakPoints(mobile) {
+          width: 95%;
+          font-size: 0.9em;
+        }
+      }
+      .icons {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-bottom: 1em;
+        @include breakPoints(mobile) {
+          font-size: 0.7em;
+        }
+        span {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: center;
+          margin: 0.5em 0;
+          font-weight: 800;
+          font-size: 1.2em;
+          svg {
+            margin-right: 1em;
+            color: var(--main-color);
+            font-size: 1.5em;
+          }
+        }
+      }
+      .buttons {
+        display: flex;
+
+        button {
+          &:first-of-type {
+            margin-right: 2em;
+          }
+        }
+      }
+    }
+    .photo {
+      position: relative;
+      img {
+        clip-path: polygon(
+          95.89% 69.86%,
+          30.14% 95.89%,
+          4.11% 30.14%,
+          69.86% 4.11%
+        );
+        @include breakPoints(mobile) {
+          width: 100%;
+        }
+      }
+      p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 4em;
+        left: 1em;
+        width: 7em;
+        height: 7em;
+        background-color: var(--light-color);
+        color: var(--dark-color);
+        font-size: 1.2em;
+        border-radius: 50%;
+        box-shadow: -2px 7px 11px 2px #878787;
+        @include breakPoints(mobile) {
+          width: 5em;
+          height: 5em;
+          font-size: 1em;
+        }
+        span {
+          font-size: 1.5em;
+          font-weight: 800;
+          position: relative;
+          @include breakPoints(mobile) {
+            font-size: 1.2em;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            top: -2.6em;
+            left: -1.7em;
+            width: 5.5em;
+            height: 5.5em;
+            border-radius: 50%;
+            border: 3px dashed var(--main-color);
+            animation: moving 10s infinite linear;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes moving {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

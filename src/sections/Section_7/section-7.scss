@@ -1,0 +1,154 @@
+@import "../../assets/breakPoints.scss";
+
+.section-7 {
+  width: 100%;
+  background-color: var(--light-color);
+  @include breakPoints(mobile) {
+    padding: 2em 0;
+  }
+  .container {
+    width: 95%;
+    padding: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include breakPoints(mobile) {
+      padding: 1em;
+      margin: 0 auto;
+    }
+    .section-title {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include breakPoints(mobile) {
+        margin-bottom: 2em;
+      }
+      b {
+        color: var(--main-color);
+        margin-bottom: 0.5em;
+        font-weight: 400;
+        font-size: 1.5em;
+      }
+      h2 {
+        font-size: 3em;
+        font-weight: 800;
+        margin-bottom: 0.5em;
+        @include breakPoints(mobile) {
+          font-size: 2em;
+        }
+      }
+      p {
+        width: 70%;
+        text-align: center;
+        color: var(--light-gray-color);
+        line-height: 2;
+        font-weight: 300;
+        @include breakPoints(mobile) {
+          width: 99%;
+        }
+      }
+    }
+    .product {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 3em;
+      @include breakPoints(mobile) {
+        flex-direction: column;
+        justify-content: center;
+      }
+      @include breakPoints(small) {
+        flex-direction: column;
+        justify-content: center;
+      }
+      img {
+        width: 100%;
+        @include breakPoints(mobile) {
+          width: 50%;
+          margin-bottom: 2em;
+        }
+        @include breakPoints(small) {
+          width: 50%;
+          margin-bottom: 2em;
+        }
+      }
+
+      .info {
+        width: 100%;
+        padding-left: 3em;
+        @include breakPoints(mobile) {
+          padding: 0;
+        }
+        .stars {
+          svg {
+            color: goldenrod;
+            font-size: 1.5em;
+          }
+        }
+        h3 {
+          font-size: 2em;
+          margin-bottom: 1.5em;
+          @include breakPoints(mobile) {
+            font-size: 1.2em;
+          }
+        }
+        p {
+          width: 90%;
+          color: var(--light-gray-color);
+          line-height: 2;
+          font-weight: 300;
+          margin-bottom: 2em;
+          @include breakPoints(mobile) {
+            font-size: 1em;
+            width: 99%;
+          }
+        }
+        ul {
+          margin-bottom: 2em;
+          li {
+            padding: 0.5em 0;
+            color: var(--light-gray-color);
+            margin-left: 3em;
+            position: relative;
+            &::before {
+              content: "\2713";
+              position: absolute;
+              top: 50%;
+              left: -1em;
+              transform: translate(-50%, -50%);
+              color: var(--main-color);
+              font-size: 1.5em;
+              font-weight: 800;
+            }
+          }
+        }
+        .prices {
+          font-size: 1.5rem;
+          margin-bottom: 2em;
+          del {
+            color: #b2b2b2;
+            margin-right: 1em;
+          }
+          b {
+            color: red;
+          }
+        }
+        .buttons {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          button {
+            &:first-of-type {
+              margin-right: 1em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
